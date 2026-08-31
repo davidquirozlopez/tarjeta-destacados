@@ -1,141 +1,165 @@
-import React from 'react';
-import { Dog, Cat, Video, LockOpen, Lock, ChevronRight, Sparkles, MessageSquare } from 'lucide-react';
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novedades y Destacados - Comunidad Etología</title>
 
-export default function App() {
-  return (
-    <div 
-      className="min-h-screen bg-[#f9fafb] p-6 md:p-12 text-slate-800"
-      style={{ fontFamily: "'Montserrat', sans-serif" }}
-    >
-      {/* Importación de la fuente Montserrat desde Google Fonts */}
-      <style>
-        {`@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');`}
-      </style>
+    <!-- Importando fuente Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-      <div className="max-w-4xl mx-auto">
+    <!-- Cargando Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Configuración para que Tailwind use Montserrat -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Cargando Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body {
+            /* Asegurar fondo transparente para que se integre bien en el iframe si Bettermode tiene otro fondo */
+            background-color: transparent; 
+        }
+        /* Eliminar scrollbars dentro del iframe para un look más limpio */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+</head>
+
+<body class="bg-[#f9fafb] p-4 md:p-8 text-slate-800 antialiased">
+    <div class="max-w-4xl mx-auto">
         
-        {/* Header Section */}
-        <div className="mb-10 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
-          <div>
-            <h1 className="text-3xl md:text-4xl font-extrabold text-[#007f91] tracking-tight flex items-center gap-3 justify-center md:justify-start">
-              <Sparkles className="text-[#CA6700] opacity-70 h-8 w-8" />
-              Novedades y Destacados
-            </h1>
-          </div>
-        </div>
-
-        {/* Menu Grid - 3 Cards Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          
-          {/* TARJETA 1: Test de Alteraciones Emocionales (Split Perros / Gatos) */}
-          <div className="col-span-1 md:col-span-2 bg-white rounded-3xl p-3 shadow-sm border border-slate-200">
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {/* Perros Button */}
-              <a 
-                href="https://comunidad.maestrianimal.com/test-arquetipos-perros"
-                className="group relative overflow-hidden rounded-2xl p-6 bg-[#007f91]/5 hover:bg-[#007f91] transition-all duration-300 border-2 border-transparent hover:border-[#007f91] flex flex-col items-center justify-center min-h-[160px] cursor-pointer text-left w-full shadow-sm hover:shadow-md"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-transparent to-[#007f91]/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <Dog className="h-12 w-12 text-[#007f91] group-hover:text-white transition-colors mb-3" />
-                <h3 className="text-xl font-bold text-slate-800 group-hover:text-white transition-colors text-center leading-tight">
-                  Test de Alteraciones Emocionales
-                </h3>
-                <p className="text-[#007f91] font-bold text-sm mt-2 text-center transition-all bg-[#007f91]/10 group-hover:bg-white group-hover:text-[#007f91] group-hover:shadow-sm px-3 py-1 rounded-full">
-                  Especialidad Canina
-                </p>
-              </a>
-
-              {/* Gatos Button */}
-              <a 
-                href="https://comunidad.maestrianimal.com/test-arquetipos-gatos"
-                className="group relative overflow-hidden rounded-2xl p-6 bg-[#ca6700]/5 hover:bg-[#ca6700] transition-all duration-300 border-2 border-transparent hover:border-[#ca6700] flex flex-col items-center justify-center min-h-[160px] cursor-pointer text-left w-full shadow-sm hover:shadow-md"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-transparent to-[#ca6700]/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <Cat className="h-12 w-12 text-[#ca6700] group-hover:text-white transition-colors mb-3" />
-                <h3 className="text-xl font-bold text-slate-800 group-hover:text-white transition-colors text-center leading-tight">
-                  Test de Alteraciones Emocionales
-                </h3>
-                <p className="text-[#ca6700] font-bold text-sm mt-2 text-center transition-all bg-[#ca6700]/10 group-hover:bg-white group-hover:text-[#ca6700] group-hover:shadow-sm px-3 py-1 rounded-full">
-                  Especialidad Felina
-                </p>
-              </a>
-            </div>
-          </div>
-
-          {/* TARJETA 2: Los Casos del Mes (Acceso Libre) */}
-          <a 
-            href="https://comunidad.maestrianimal.com/casos-del-mes"
-            className="group bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 cursor-pointer flex flex-col justify-between hover:-translate-y-1 block"
-          >
+        <!-- Header Section -->
+        <div class="mb-10 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
             <div>
-              <div className="w-12 h-12 bg-slate-100 text-slate-600 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#007f91]/10 group-hover:text-[#007f91] transition-colors">
-                <MessageSquare className="h-6 w-6" />
-              </div>
-              <div className="flex items-center gap-2 mb-2">
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Acceso Libre</span>
-              </div>
-              <h3 className="text-2xl font-bold text-slate-800 mb-2 group-hover:text-[#007f91] transition-colors">
-                Los Casos del Mes
-              </h3>
-              <p className="text-slate-500 text-sm">
-                Aprende y debate sobre los desafíos clínicos más interesantes que la comunidad ha enfrentado este mes.
-              </p>
+                <h1 class="text-3xl md:text-4xl font-extrabold text-[#007f91] tracking-tight flex items-center gap-3 justify-center md:justify-start">
+                    <i data-lucide="sparkles" class="text-[#CA6700] opacity-70 h-8 w-8"></i>
+                    Novedades y Destacados
+                </h1>
             </div>
-            <div className="mt-6 flex items-center justify-end text-slate-300 group-hover:text-[#007f91] transition-colors">
-              <ChevronRight className="h-6 w-6" />
-            </div>
-          </a>
+        </div>
 
-          {/* TARJETA 3: Mentoría Semanal en Vivo (PRO) */}
-          <div 
-            className="group relative bg-gradient-to-b from-white to-slate-50 rounded-3xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 flex flex-col justify-between hover:-translate-y-1 overflow-hidden"
-          >
-            {/* Pro Badge Decorator (Top Right) */}
-            <div className="absolute -top-1 -right-1 bg-gradient-to-bl from-amber-400 to-amber-600 text-white text-[10px] font-black uppercase tracking-widest py-1.5 px-4 shadow-sm rounded-bl-xl rounded-tr-3xl flex items-center gap-1 z-10">
-               Contenido PRO
-            </div>
+        <!-- Menu Grid - 3 Cards Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             
-            {/* Subtle background glow on hover */}
-            <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-amber-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+            <!-- TARJETA 1: Test de Alteraciones Emocionales (Split Perros / Gatos) -->
+            <div class="col-span-1 md:col-span-2 bg-white rounded-3xl p-3 shadow-sm border border-slate-200">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    
+                    <!-- Perros Button (NOTA: target="_top" es CRUCIAL para iframes) -->
+                    <a href="https://comunidad.maestrianimal.com/test-arquetipos-perros" target="_top"
+                       class="group relative overflow-hidden rounded-2xl p-6 bg-[#007f91]/5 hover:bg-[#007f91] transition-all duration-300 border-2 border-transparent hover:border-[#007f91] flex flex-col items-center justify-center min-h-[160px] cursor-pointer text-left w-full shadow-sm hover:shadow-md">
+                        <div class="absolute inset-0 bg-gradient-to-br from-transparent to-[#007f91]/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <i data-lucide="dog" class="h-12 w-12 text-[#007f91] group-hover:text-white transition-colors mb-3"></i>
+                        <h3 class="text-xl font-bold text-slate-800 group-hover:text-white transition-colors text-center leading-tight">
+                            Test de Alteraciones Emocionales
+                        </h3>
+                        <p class="text-[#007f91] font-bold text-sm mt-2 text-center transition-all bg-[#007f91]/10 group-hover:bg-white group-hover:text-[#007f91] group-hover:shadow-sm px-3 py-1 rounded-full">
+                            Especialidad Canina
+                        </p>
+                    </a>
 
-            {/* Content */}
-            <div className="relative z-0">
-              <div className="w-12 h-12 bg-slate-100 text-slate-600 rounded-xl flex items-center justify-center mb-4 group-hover:bg-amber-100 group-hover:text-amber-600 transition-colors shadow-sm">
-                <Video className="h-6 w-6" />
-              </div>
-              <div className="flex items-center gap-1.5 mb-2">
-                <Lock className="h-3.5 w-3.5 text-amber-500" />
-                <span className="text-xs font-bold uppercase tracking-wider text-amber-600">Exclusivo Comunidad Pro</span>
-              </div>
-              <h3 className="text-2xl font-bold text-slate-800 mb-2 group-hover:text-amber-700 transition-colors pr-10">
-                Mentoría Semanal en Vivo
-              </h3>
-              <p className="text-slate-500 text-sm">
-                Conéctate en directo para resolver dudas de casos complejos y actualizar conocimientos.
-              </p>
+                    <!-- Gatos Button (NOTA: target="_top" es CRUCIAL para iframes) -->
+                    <a href="https://comunidad.maestrianimal.com/test-arquetipos-gatos" target="_top"
+                       class="group relative overflow-hidden rounded-2xl p-6 bg-[#ca6700]/5 hover:bg-[#ca6700] transition-all duration-300 border-2 border-transparent hover:border-[#ca6700] flex flex-col items-center justify-center min-h-[160px] cursor-pointer text-left w-full shadow-sm hover:shadow-md">
+                        <div class="absolute inset-0 bg-gradient-to-br from-transparent to-[#ca6700]/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <i data-lucide="cat" class="h-12 w-12 text-[#ca6700] group-hover:text-white transition-colors mb-3"></i>
+                        <h3 class="text-xl font-bold text-slate-800 group-hover:text-white transition-colors text-center leading-tight">
+                            Test de Alteraciones Emocionales
+                        </h3>
+                        <p class="text-[#ca6700] font-bold text-sm mt-2 text-center transition-all bg-[#ca6700]/10 group-hover:bg-white group-hover:text-[#ca6700] group-hover:shadow-sm px-3 py-1 rounded-full">
+                            Especialidad Felina
+                        </p>
+                    </a>
+                </div>
             </div>
-            
-            {/* Botones de acción */}
-            <div className="mt-6 flex flex-col sm:flex-row gap-3 relative z-10">
-              <a 
-                href="https://www.maestrianimal.com/precios-comunidad"
-                className="flex-1 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-white font-bold py-2.5 px-4 rounded-xl text-sm transition-all shadow-sm hover:shadow text-center flex items-center justify-center"
-              >
-                Mejorar a Plan Pro
-              </a>
-              <a 
-                href="https://comunidad.maestrianimal.com/mentoria-semanal"
-                className="flex-1 bg-white border border-slate-200 hover:border-amber-300 text-slate-600 hover:text-amber-600 font-bold py-2.5 px-4 rounded-xl text-sm transition-all shadow-sm hover:shadow text-center flex items-center justify-center gap-1"
-              >
-                Acceso exclusivo
-                <ChevronRight className="h-4 w-4" />
-              </a>
+
+            <!-- TARJETA 2: Los Casos del Mes (Acceso Libre) -->
+            <a href="https://comunidad.maestrianimal.com/casos-del-mes" target="_top"
+               class="group bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 cursor-pointer flex flex-col justify-between hover:-translate-y-1 block">
+                <div>
+                    <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#007f91]/10 group-hover:text-[#007f91] transition-colors">
+                        <i data-lucide="message-square" class="h-6 w-6"></i>
+                    </div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Acceso Libre</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-2 group-hover:text-[#007f91] transition-colors">
+                        Los Casos del Mes
+                    </h3>
+                    <p class="text-slate-500 text-sm">
+                        Aprende y debate sobre los desafíos clínicos más interesantes que la comunidad ha enfrentado este mes.
+                    </p>
+                </div>
+                <div class="mt-6 flex items-center justify-end text-slate-300 group-hover:text-[#007f91] transition-colors">
+                    <i data-lucide="chevron-right" class="h-6 w-6"></i>
+                </div>
+            </a>
+
+            <!-- TARJETA 3: Mentoría Semanal en Vivo (PRO) -->
+            <div class="group relative bg-gradient-to-b from-white to-slate-50 rounded-3xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 flex flex-col justify-between hover:-translate-y-1 overflow-hidden">
+                
+                <!-- Pro Badge Decorator -->
+                <div class="absolute -top-1 -right-1 bg-gradient-to-bl from-amber-400 to-amber-600 text-white text-[10px] font-black uppercase tracking-widest py-1.5 px-4 shadow-sm rounded-bl-xl rounded-tr-3xl flex items-center gap-1 z-10">
+                    Contenido PRO
+                </div>
+                
+                <!-- Subtle background glow -->
+                <div class="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-amber-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+
+                <!-- Content -->
+                <div class="relative z-0">
+                    <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-xl flex items-center justify-center mb-4 group-hover:bg-amber-100 group-hover:text-amber-600 transition-colors shadow-sm">
+                        <i data-lucide="video" class="h-6 w-6"></i>
+                    </div>
+                    <div class="flex items-center gap-1.5 mb-2">
+                        <i data-lucide="lock" class="h-3.5 w-3.5 text-amber-500"></i>
+                        <span class="text-xs font-bold uppercase tracking-wider text-amber-600">Exclusivo Comunidad Pro</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-2 group-hover:text-amber-700 transition-colors pr-10">
+                        Mentoría Semanal en Vivo
+                    </h3>
+                    <p class="text-slate-500 text-sm">
+                        Conéctate en directo para resolver dudas de casos complejos y actualizar conocimientos.
+                    </p>
+                </div>
+                
+                <!-- Botones de acción (Ambos con target="_top") -->
+                <div class="mt-6 flex flex-col sm:flex-row gap-3 relative z-10">
+                    <a href="https://www.maestrianimal.com/precios-comunidad" target="_top"
+                       class="flex-1 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-white font-bold py-2.5 px-4 rounded-xl text-sm transition-all shadow-sm hover:shadow text-center flex items-center justify-center">
+                        Mejorar a Plan Pro
+                    </a>
+                    <a href="https://comunidad.maestrianimal.com/mentoria-semanal" target="_top"
+                       class="flex-1 bg-white border border-slate-200 hover:border-amber-300 text-slate-600 hover:text-amber-600 font-bold py-2.5 px-4 rounded-xl text-sm transition-all shadow-sm hover:shadow text-center flex items-center justify-center gap-1">
+                        Acceso exclusivo
+                        <i data-lucide="chevron-right" class="h-4 w-4"></i>
+                    </a>
+                </div>
             </div>
-          </div>
 
         </div>
-      </div>
     </div>
-  );
-}
+
+    <!-- Script para renderizar los iconos de Lucide -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
