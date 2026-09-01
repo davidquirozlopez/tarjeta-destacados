@@ -90,27 +90,47 @@
                 </div>
             </div>
 
-            <!-- TARJETA 2: Los Casos del Mes (Acceso Libre) -->
-            <a href="https://comunidad.maestrianimal.com/casos-del-mes" target="_top"
-               class="group bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 cursor-pointer flex flex-col justify-between hover:-translate-y-1 block">
-                <div>
-                    <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#007f91]/10 group-hover:text-[#007f91] transition-colors">
+            <!-- TARJETA 2: Los Casos del Mes (PRO) -->
+            <div class="group relative bg-gradient-to-b from-white to-slate-50 rounded-3xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 flex flex-col justify-between hover:-translate-y-1 overflow-hidden">
+                
+                <!-- Pro Badge Decorator -->
+                <div class="absolute -top-1 -right-1 bg-gradient-to-bl from-amber-400 to-amber-600 text-white text-[10px] font-black uppercase tracking-widest py-1.5 px-4 shadow-sm rounded-bl-xl rounded-tr-3xl flex items-center gap-1 z-10">
+                    Contenido PRO
+                </div>
+                
+                <!-- Subtle background glow -->
+                <div class="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-amber-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+
+                <!-- Content -->
+                <div class="relative z-0">
+                    <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-xl flex items-center justify-center mb-4 group-hover:bg-amber-100 group-hover:text-amber-600 transition-colors shadow-sm">
                         <i data-lucide="message-square" class="h-6 w-6"></i>
                     </div>
-                    <div class="flex items-center gap-2 mb-2">
-                        <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Acceso Libre</span>
+                    <div class="flex items-center gap-1.5 mb-2">
+                        <i data-lucide="lock" class="h-3.5 w-3.5 text-amber-500"></i>
+                        <span class="text-xs font-bold uppercase tracking-wider text-amber-600">Exclusivo Comunidad Pro</span>
                     </div>
-                    <h3 class="text-2xl font-bold text-slate-800 mb-2 group-hover:text-[#007f91] transition-colors">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-2 group-hover:text-amber-700 transition-colors pr-10">
                         Los Casos del Mes
                     </h3>
                     <p class="text-slate-500 text-sm">
                         Aprende y debate sobre los desafíos clínicos más interesantes que la comunidad ha enfrentado este mes.
                     </p>
                 </div>
-                <div class="mt-6 flex items-center justify-end text-slate-300 group-hover:text-[#007f91] transition-colors">
-                    <i data-lucide="chevron-right" class="h-6 w-6"></i>
+                
+                <!-- Botones de acción -->
+                <div class="mt-6 flex flex-col sm:flex-row gap-3 relative z-10">
+                    <a href="https://www.maestrianimal.com/precios-comunidad" target="_blank" rel="noopener noreferrer"
+                       class="flex-1 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-white font-bold py-2.5 px-4 rounded-xl text-sm transition-all shadow-sm hover:shadow text-center flex items-center justify-center">
+                        Mejorar a Plan Pro
+                    </a>
+                    <a href="https://comunidad.maestrianimal.com/casos-del-mes" target="_top"
+                       class="flex-1 bg-white border border-slate-200 hover:border-amber-300 text-slate-600 hover:text-amber-600 font-bold py-2.5 px-4 rounded-xl text-sm transition-all shadow-sm hover:shadow text-center flex items-center justify-center gap-1">
+                        Acceso exclusivo
+                        <i data-lucide="chevron-right" class="h-4 w-4"></i>
+                    </a>
                 </div>
-            </a>
+            </div>
 
             <!-- TARJETA 3: Mentoría Semanal en Vivo (PRO) -->
             <div class="group relative bg-gradient-to-b from-white to-slate-50 rounded-3xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 flex flex-col justify-between hover:-translate-y-1 overflow-hidden">
